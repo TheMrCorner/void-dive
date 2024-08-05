@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg4hfjamasc6t"]
+
+[ext_resource type="Script" path="res://scripts/canvas_controller.gd" id="1_h84nv"]
+[ext_resource type="PackedScene" uid="uid://bkra4145216t0" path="res://scenes/slot.tscn" id="1_k543l"]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("elements_selected", "elements_available")]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 1.0
+offset_right = 48.0
+offset_bottom = 32.0
+script = ExtResource("1_h84nv")
+elements_selected = [NodePath("Elements selected/ESSlot"), NodePath("Elements selected/ESSlot2"), NodePath("Elements selected/ESSlot3")]
+elements_available = [NodePath("Elements available/Slot"), NodePath("Elements available/Slot2"), NodePath("Elements available/Slot3"), NodePath("Elements available/Slot4")]
+
+[node name="Elements available" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -48.0
+offset_right = -4.0
+offset_bottom = 8.0
+grow_horizontal = 0
+
+[node name="Slot" parent="Elements available" instance=ExtResource("1_k543l")]
+layout_mode = 2
+
+[node name="Slot2" parent="Elements available" instance=ExtResource("1_k543l")]
+layout_mode = 2
+
+[node name="Slot3" parent="Elements available" instance=ExtResource("1_k543l")]
+layout_mode = 2
+
+[node name="Slot4" parent="Elements available" instance=ExtResource("1_k543l")]
+layout_mode = 2
+
+[node name="Elements selected" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -37.0
+offset_top = 20.0
+offset_right = -5.0
+offset_bottom = 28.0
+grow_horizontal = 0
+
+[node name="ESSlot" parent="Elements selected" instance=ExtResource("1_k543l")]
+layout_mode = 2
+
+[node name="ESSlot2" parent="Elements selected" instance=ExtResource("1_k543l")]
+layout_mode = 2
+
+[node name="ESSlot3" parent="Elements selected" instance=ExtResource("1_k543l")]
+layout_mode = 2

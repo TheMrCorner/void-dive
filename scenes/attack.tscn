@@ -1,0 +1,164 @@
+[gd_scene load_steps=18 format=3 uid="uid://dnmvvfjnb8mj5"]
+
+[ext_resource type="Script" path="res://scripts/attack.gd" id="1_lb2ok"]
+[ext_resource type="Texture2D" uid="uid://sk7ue8dhsb7l" path="res://assets/animations_area_melee.png" id="2_jh4a3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpfh1"]
+atlas = ExtResource("2_jh4a3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cwrd"]
+atlas = ExtResource("2_jh4a3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6fd2"]
+atlas = ExtResource("2_jh4a3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_juhjt"]
+atlas = ExtResource("2_jh4a3")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67jqr"]
+atlas = ExtResource("2_jh4a3")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mx62"]
+atlas = ExtResource("2_jh4a3")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1g3p"]
+atlas = ExtResource("2_jh4a3")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3r5s4"]
+atlas = ExtResource("2_jh4a3")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n2e3o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpfh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cwrd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6fd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_juhjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67jqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mx62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1g3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3r5s4")
+}],
+"loop": true,
+"name": &"air",
+"speed": 8.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"earth",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"fire",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"water",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d5o2q"]
+radius = 4.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36ifg"]
+size = Vector2(4, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vanye"]
+size = Vector2(16, 184)
+
+[sub_resource type="Animation" id="Animation_e2u7n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("melee_area:shape:radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.0]
+}
+
+[sub_resource type="Animation" id="Animation_gksux"]
+resource_name = "melee_area_attack"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("melee_area:shape:radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [4.0, 16.0, 16.0, 9.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jucy4"]
+_data = {
+"RESET": SubResource("Animation_e2u7n"),
+"melee_area_attack": SubResource("Animation_gksux")
+}
+
+[node name="Attack" type="Area2D"]
+script = ExtResource("1_lb2ok")
+
+[node name="melee_area_attack" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_n2e3o")
+animation = &"air"
+frame = 4
+frame_progress = 0.860045
+
+[node name="melee_precise_attak" type="Sprite2D" parent="."]
+visible = false
+
+[node name="ranged_area_attack" type="Sprite2D" parent="."]
+visible = false
+
+[node name="melee_area" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_d5o2q")
+
+[node name="melee_precise" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_36ifg")
+
+[node name="ranged_area" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -92)
+shape = SubResource("RectangleShape2D_vanye")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jucy4")
+}

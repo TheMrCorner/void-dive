@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://wr6es4ugoobw"]
+
+[ext_resource type="Script" path="res://scripts/scene_manager.gd" id="1_fo5p0"]
+[ext_resource type="PackedScene" uid="uid://c1rvn80ju2y0o" path="res://scenes/main_menu.tscn" id="2_hbn32"]
+[ext_resource type="PackedScene" uid="uid://dwlguo7amioym" path="res://scenes/testlevel.tscn" id="3_15tg2"]
+
+[node name="Scenemanager" type="Node"]
+script = ExtResource("1_fo5p0")
+game_scenes = Array[PackedScene]([ExtResource("2_hbn32"), ExtResource("3_15tg2")])
