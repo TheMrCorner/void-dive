@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdo6kt36103is"
-path="res://.godot/imported/melee_precise_attack.png-834644633f3c8ff4e5cbb3de860b7562.ctex"
+uid="uid://dtr2i4koxeh2b"
+path="res://.godot/imported/ranged_area_spritesheet.png-988aaba9364a07482f5906657e93a93f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/melee_precise_attack.png"
-dest_files=["res://.godot/imported/melee_precise_attack.png-834644633f3c8ff4e5cbb3de860b7562.ctex"]
+source_file="res://assets/ranged_area_spritesheet.png"
+dest_files=["res://.godot/imported/ranged_area_spritesheet.png-988aaba9364a07482f5906657e93a93f.ctex"]
 
 [params]
 

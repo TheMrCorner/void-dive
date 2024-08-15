@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2tf56kvog630"
-path="res://.godot/imported/AreaMeleeAttack.png-b5a5b7a75eefaedf75e15f9ec6ecad1b.ctex"
+uid="uid://dv578ixi4xt6x"
+path="res://.godot/imported/area_attack_spritesheet.png-dca502be9a58b89bd37a325f090ddf4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/AreaMeleeAttack.png"
-dest_files=["res://.godot/imported/AreaMeleeAttack.png-b5a5b7a75eefaedf75e15f9ec6ecad1b.ctex"]
+source_file="res://assets/area_attack_spritesheet.png"
+dest_files=["res://.godot/imported/area_attack_spritesheet.png-dca502be9a58b89bd37a325f090ddf4e.ctex"]
 
 [params]
 
