@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dwlguo7amioym"]
 
 [ext_resource type="PackedScene" uid="uid://brsx465dquftm" path="res://scenes/player.tscn" id="1_1w3qn"]
-[ext_resource type="Texture2D" uid="uid://c3mopkn6qeu54" path="res://assets/tileset_spritesheet.png" id="1_ku1og"]
+[ext_resource type="Texture2D" uid="uid://c3mopkn6qeu54" path="res://assets/tileset_spritesheet.png" id="1_phogx"]
 [ext_resource type="PackedScene" uid="uid://dg4hfjamasc6t" path="res://scenes/playerUI.tscn" id="2_dg3pk"]
 [ext_resource type="PackedScene" uid="uid://c3rq6me210wpb" path="res://scenes/enemy.tscn" id="3_ud47r"]
 
@@ -9,7 +9,7 @@
 tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 131072, 0, 0, 1, 0, 0, 65537, 0, 0, 131073, 0, 0, 2, 0, 0, 65538, 196608, 1, 131074, 393216, 0, 3, 0, 0, 65539, 196608, 1, 131075, 393216, 0, 4, 0, 0, 65540, 196608, 1, 131076, 393216, 0, 5, 0, 0, 65541, 196608, 1, 131077, 393216, 0, 6, 0, 0, 65542, 0, 0, 131078, 0, 0, 7, 65536, 1, 65543, 0, 0, 131079, 0, 0, 8, 0, 0, 65544, 0, 0, 131080, 0, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_03ed8"]
-texture = ExtResource("1_ku1og")
+texture = ExtResource("1_phogx")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
